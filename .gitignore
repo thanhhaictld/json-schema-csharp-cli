@@ -1,0 +1,5 @@
+*/obj/
+*/bin/
+*/TestOutputs
+/.idea
+*.user

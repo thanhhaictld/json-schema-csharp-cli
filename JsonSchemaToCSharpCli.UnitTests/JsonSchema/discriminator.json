@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Fruit",
+  "type": "object",
+  "discriminator": {
+    "propertyName": "payloadType",
+    "mapping": {
+      "Apple": "#/definitions/Apple",
+      "Orange": "#/definitions/Orange"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "payloadType"
+  ],
+  "properties": {
+    "payloadType": {
+      "type": "string",
+      "enum": [
+        "Apple",
+        "Orange"
+      ]
+    }
+  },
+  "definitions": {
+    "Apple": {
+      "allOf": [
+        {
+          "$ref": "#"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Foo": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Orange": {
+      "allOf": [
+        {
+          "$ref": "#"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Bar": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

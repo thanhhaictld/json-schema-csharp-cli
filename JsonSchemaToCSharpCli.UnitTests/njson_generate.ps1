@@ -1,0 +1,2 @@
+jsonschematocsharp JsonSchema/discriminator.json Generated/DiscriminatorSchema.cs --namespace DiscriminatorSchema
+jsonschematocsharp JsonSchema/animal.json Generated/AnimalSchema.cs --namespace AnimalSchema

@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "RootEvent",
+  "additionalProperties": false,
+  "properties": {
+    "Animal": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Animal"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "Dog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Bar": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Animal"
+        }
+      ]
+    },
+    "Animal": {
+      "type": "object",
+      "discriminator": "discriminator",
+      "additionalProperties": false,
+      "required": [
+        "discriminator"
+      ],
+      "properties": {
+        "Foo": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "discriminator": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
