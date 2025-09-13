@@ -5,36 +5,40 @@
 //----------------------
 
 
-namespace AnimalSchema
+namespace FruitSchema
 {
     #pragma warning disable // Disable all warnings
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.4.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Dog : Animal
+    public partial class Apple : Fruit
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("Bar")]
-        public string Bar { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appleProp1")]
+        public string AppleProp1 { get; set; }
 
-    }
-
-    [JsonInheritanceConverter(typeof(Animal), "discriminator")]
-    [JsonInheritanceAttribute("Dog", typeof(Dog))]
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.4.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class Animal
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("Foo")]
-        public string Foo { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appleProp2")]
+        public string AppleProp2 { get; set; }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.4.0.0 (Newtonsoft.Json v13.0.0.0)")]
-    public partial class RootEvent
+    public partial class Orange : Fruit
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("Animal")]
-        public Animal Animal { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("orangeProp1")]
+        public string OrangeProp1 { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("orangeProp2")]
+        public string OrangeProp2 { get; set; }
+
+    }
+
+    [JsonInheritanceConverter(typeof(Fruit), "payloadType")]
+    [JsonInheritanceAttribute("Apple", typeof(Apple))]
+    [JsonInheritanceAttribute("Orange", typeof(Orange))]
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "11.4.0.0 (Newtonsoft.Json v13.0.0.0)")]
+    public partial class Fruit
+    {
 
     }
 

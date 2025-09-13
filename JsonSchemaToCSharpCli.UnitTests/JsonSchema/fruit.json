@@ -9,10 +9,10 @@
       "Orange": "#/definitions/Orange"
     }
   },
-  "additionalProperties": false,
   "required": [
     "payloadType"
   ],
+  "additionalProperties": false,
   "properties": {
     "payloadType": {
       "type": "string",
@@ -32,7 +32,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "Foo": {
+            "appleProp1": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "appleProp2": {
               "type": [
                 "null",
                 "string"
@@ -51,7 +57,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "Bar": {
+            "orangeProp1": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "orangeProp2": {
               "type": [
                 "null",
                 "string"
